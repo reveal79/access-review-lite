@@ -36,6 +36,12 @@ Demo mode performs no authentication or network requests.
 
 [View the synthetic sample report](docs/sample-report.html).
 
+## Report preview
+
+The standalone synthetic report is the authoritative preview for v0.1.0. It includes the executive summary, collection metadata, privileged-account review, guest-access review, and application-permission findings without loading external assets.
+
+Focused README screenshots are planned as a post-release documentation enhancement. Their absence does not affect demo mode, report generation, or live collection.
+
 ## Run a live review
 
 ```powershell
