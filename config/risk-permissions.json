@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "permissions": [
+    {
+      "name": "RoleManagement.ReadWrite.Directory",
+      "severity": "Critical",
+      "rationale": "Can change Entra directory role assignments and settings.",
+      "recommendation": "Confirm the permission is essential, tightly owned, and continuously monitored."
+    },
+    {
+      "name": "AppRoleAssignment.ReadWrite.All",
+      "severity": "Critical",
+      "rationale": "Can grant or remove application role assignments.",
+      "recommendation": "Restrict to a controlled identity-governance workflow and validate ownership."
+    },
+    {
+      "name": "DelegatedPermissionGrant.ReadWrite.All",
+      "severity": "Critical",
+      "rationale": "Can manage delegated permission grants for any API.",
+      "recommendation": "Remove unless an approved consent-management service requires it."
+    },
+    {
+      "name": "Directory.ReadWrite.All",
+      "severity": "Critical",
+      "rationale": "Provides broad write access to directory data.",
+      "recommendation": "Replace with narrower resource-specific permissions where possible."
+    },
+    {
+      "name": "Application.ReadWrite.All",
+      "severity": "Critical",
+      "rationale": "Can create and modify applications and service principals.",
+      "recommendation": "Validate the workload, owners, credential controls, and necessity of tenant-wide scope."
+    },
+    {
+      "name": "User.ReadWrite.All",
+      "severity": "High",
+      "rationale": "Can modify all user profiles.",
+      "recommendation": "Use a narrower user-management permission or controlled administrative workflow."
+    },
+    {
+      "name": "Group.ReadWrite.All",
+      "severity": "High",
+      "rationale": "Can modify groups and group memberships across the tenant.",
+      "recommendation": "Confirm tenant-wide write access is required and monitor membership changes."
+    },
+    {
+      "name": "Mail.ReadWrite",
+      "severity": "High",
+      "rationale": "Can read and modify mailbox content.",
+      "recommendation": "Limit mailbox scope with application access controls where supported."
+    },
+    {
+      "name": "Mail.ReadWrite.All",
+      "severity": "High",
+      "rationale": "Can read and modify mailbox content broadly.",
+      "recommendation": "Validate tenant-wide need and use resource-scoped controls where supported."
+    },
+    {
+      "name": "Mail.Send",
+      "severity": "High",
+      "rationale": "Can send mail as users or the signed-in user, depending on grant type.",
+      "recommendation": "Validate sender scope, ownership, and monitoring."
+    },
+    {
+      "name": "Files.ReadWrite.All",
+      "severity": "High",
+      "rationale": "Can read and modify files across accessible storage.",
+      "recommendation": "Reduce scope and verify the application still requires write access."
+    },
+    {
+      "name": "Sites.FullControl.All",
+      "severity": "Critical",
+      "rationale": "Provides full control of SharePoint sites.",
+      "recommendation": "Replace with selected-site permissions and explicit site assignments where possible."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Generated reports and build artifacts
+/artifacts/
+/reports/
+/output/
+/access-review-lite-report.html
+/access-review-lite-*.html
+*.nupkg
+/bin/
+/obj/
+
+# Test and coverage artifacts
+/testResults.xml
+/TestResults/
+/coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# PowerShell caches, transcripts, and serialized session data
+*.clixml
+*.cache
+ModuleAnalysisCache*
+PowerShell_transcript*
+/.powershell/
+/.pwsh/
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+*.local.json
+/config/local*.json
+/local.settings.json
+/secrets.*
+
+# Temporary files and logs
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+/.cache/
+/.tmp/
+
+# Editor and operating-system metadata
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db

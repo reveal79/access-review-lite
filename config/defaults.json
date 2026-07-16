@@ -1,0 +1,4 @@
+{
+  "staleAdministratorDays": 90,
+  "staleGuestDays": 180
+}

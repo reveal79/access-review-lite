@@ -1,0 +1,82 @@
+{
+  "tenant": {
+    "id": "demo-tenant",
+    "displayName": "Northwind Manufacturing (Demo)",
+    "mode": "Demo"
+  },
+  "collectionMetadata": [
+    { "name": "Directory users", "status": "Available", "reasonCode": null, "reason": null, "recordCount": 9, "collectedAt": "2026-07-15T17:00:00Z" },
+    { "name": "Sign-in activity", "status": "Partial", "reasonCode": "DemoMixedStates", "reason": "Synthetic records intentionally exercise every normalized activity state.", "recordCount": 9, "collectedAt": "2026-07-15T17:00:00Z" },
+    { "name": "MFA registration", "status": "Partial", "reasonCode": "DemoMixedStates", "reason": "Synthetic records include available and unavailable MFA states.", "recordCount": 5, "collectedAt": "2026-07-15T17:00:00Z" },
+    { "name": "Directory role assignments", "status": "Available", "reasonCode": null, "reason": null, "recordCount": 6, "collectedAt": "2026-07-15T17:00:00Z" },
+    { "name": "Application permissions", "status": "Available", "reasonCode": null, "reason": null, "recordCount": 3, "collectedAt": "2026-07-15T17:00:00Z" },
+    { "name": "Delegated OAuth grants", "status": "Available", "reasonCode": null, "reason": null, "recordCount": 2, "collectedAt": "2026-07-15T17:00:00Z" }
+  ],
+  "privilegedAccounts": [
+    {
+      "id": "admin-1", "displayName": "Adele Vance", "userPrincipalName": "adele@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2021-01-10T00:00:00Z", "roles": ["Global Administrator"],
+      "activity": { "lastSignInDateTime": "2026-07-10T14:30:00Z", "neverSignedIn": false, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "Registered", "reason": null }
+    },
+    {
+      "id": "admin-2", "displayName": "Diego Siciliani", "userPrincipalName": "diego@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2022-03-11T00:00:00Z", "roles": ["User Administrator"],
+      "activity": { "lastSignInDateTime": "2025-12-01T10:00:00Z", "neverSignedIn": false, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "Registered", "reason": null }
+    },
+    {
+      "id": "admin-3", "displayName": "Legacy Emergency Admin", "userPrincipalName": "breakglass@northwind.example", "accountEnabled": false,
+      "createdDateTime": "2020-02-01T00:00:00Z", "roles": ["Global Administrator"],
+      "activity": { "lastSignInDateTime": null, "neverSignedIn": true, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "NotRegistered", "reason": null }
+    },
+    {
+      "id": "admin-4", "displayName": "Miriam Graham", "userPrincipalName": "miriam@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2023-04-02T00:00:00Z", "roles": ["Application Administrator"],
+      "activity": { "lastSignInDateTime": null, "neverSignedIn": false, "unavailableReasonCode": "LicenseUnavailable", "reason": "Synthetic P1 licensing limitation." },
+      "mfa": { "state": "UnavailablePermissions", "reason": "Synthetic authorization limitation." }
+    }
+  ],
+  "nonUserPrivilegedPrincipals": [
+    { "id": "group-1", "displayName": "Tier 1 Administrators", "principalType": "Group", "roles": ["Helpdesk Administrator"] },
+    { "id": "sp-1", "displayName": "Identity Lifecycle Automation", "principalType": "ServicePrincipal", "roles": ["User Administrator"] }
+  ],
+  "guests": [
+    {
+      "id": "guest-1", "displayName": "Recent Partner", "userPrincipalName": "recent_partner#EXT#@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2026-05-01T00:00:00Z", "roles": [],
+      "activity": { "lastSignInDateTime": "2026-07-01T09:00:00Z", "neverSignedIn": false, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "Unknown", "reason": null }
+    },
+    {
+      "id": "guest-2", "displayName": "Former Contractor", "userPrincipalName": "contractor#EXT#@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2023-01-01T00:00:00Z", "roles": [],
+      "activity": { "lastSignInDateTime": "2024-12-15T09:00:00Z", "neverSignedIn": false, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "Unknown", "reason": null }
+    },
+    {
+      "id": "guest-3", "displayName": "Unused Invitation", "userPrincipalName": "unused#EXT#@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2024-02-01T00:00:00Z", "roles": [],
+      "activity": { "lastSignInDateTime": null, "neverSignedIn": true, "unavailableReasonCode": null, "reason": null },
+      "mfa": { "state": "Unknown", "reason": null }
+    },
+    {
+      "id": "guest-4", "displayName": "Unknown Activity Guest", "userPrincipalName": "unknown#EXT#@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2023-08-01T00:00:00Z", "roles": [],
+      "activity": { "lastSignInDateTime": null, "neverSignedIn": false, "unavailableReasonCode": "PermissionDenied", "reason": "Synthetic authorization limitation." },
+      "mfa": { "state": "Unknown", "reason": null }
+    },
+    {
+      "id": "guest-5", "displayName": "Indeterminate New Guest", "userPrincipalName": "indeterminate#EXT#@northwind.example", "accountEnabled": true,
+      "createdDateTime": "2026-06-15T00:00:00Z", "roles": [],
+      "activity": { "lastSignInDateTime": null, "neverSignedIn": false, "unavailableReasonCode": null, "reason": "The API returned no conclusive activity evidence." },
+      "mfa": { "state": "Unknown", "reason": null }
+    }
+  ],
+  "permissionGrants": [
+    { "id": "grant-1", "clientId": "client-1", "clientDisplayName": "Legacy Provisioning Tool", "resourceId": "graph", "resourceDisplayName": "Microsoft Graph", "permission": "Directory.ReadWrite.All", "grantType": "Application", "consentType": "AllPrincipals" },
+    { "id": "grant-2", "clientId": "client-2", "clientDisplayName": "Mail Workflow", "resourceId": "graph", "resourceDisplayName": "Microsoft Graph", "permission": "Mail.Send", "grantType": "Delegated", "consentType": "AllPrincipals" },
+    { "id": "grant-3", "clientId": "client-3", "clientDisplayName": "Inventory Reader", "resourceId": "graph", "resourceDisplayName": "Microsoft Graph", "permission": "User.Read.All", "grantType": "Application", "consentType": "AllPrincipals" }
+  ]
+}
